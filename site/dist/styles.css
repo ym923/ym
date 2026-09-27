@@ -65,3 +65,66 @@ dialog h2 { padding-right: 32px; margin-bottom: 15px; font-size: 27px; font-weig
   .dialog-metrics p:last-child { border-bottom: 0; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Academic portfolio redesign */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap");
+
+.academic-site {
+  margin: 0;
+  background: #fff;
+  color: #2f2f2f;
+  font-family: Georgia, "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, SimSun, serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.academic-site .legacy-main,
+.academic-site #detail-dialog { display: none !important; }
+.academic-site .new-main { width: min(900px, calc(100% - 36px)); margin: 0 auto; padding: 34px 0 20px; }
+.academic-site a { color: #292929; text-decoration-color: #777; text-underline-offset: 3px; }
+.academic-site a:hover { color: #315b82; }
+.academic-profile { position: relative; min-height: 170px; padding-right: 215px; }
+.academic-profile h1 { margin: 0 0 30px; font-size: 2.45rem; font-weight: 400; letter-spacing: .17em; }
+.academic-profile p { margin: .25rem 0; }
+.academic-profile img { position: absolute; top: 0; right: 18px; width: 150px; height: 150px; object-fit: cover; border: 1px solid #aaa; box-shadow: 0 1px 5px rgba(0,0,0,.22); }
+.academic-section { margin-top: 2rem; }
+.academic-section h2 { margin: 0 0 1rem; font-size: 1.75rem; font-weight: 400; letter-spacing: .02em; }
+.academic-section h3 { margin: 0 0 .25rem; font-size: 1.03rem; line-height: 1.45; }
+.academic-section p { margin: .22rem 0; }
+.academic-site hr { height: 1px; margin: 1.8rem 0 .4rem; border: 0; background: #e4e4e4; }
+.institution-row { display: grid; grid-template-columns: 78px 1fr; gap: 20px; align-items: center; margin: 1rem 0 1.35rem; }
+.seal, .company-badge { display: grid; place-items: center; width: 62px; height: 62px; color: #376486; border: 2px solid #376486; border-radius: 50%; font: 700 .72rem/1 Arial, sans-serif; letter-spacing: .02em; }
+.company-badge { color: #fff; background: #3d5d78; border-radius: 5px; font: 700 .92rem/1.25 "Microsoft YaHei", sans-serif; text-align: center; }
+.item-date { margin-top: 0 !important; }
+.item-note { color: #626262; font-size: .92rem; }
+.bracket-links { margin-top: .35rem !important; }
+.bracket-links a { margin-right: .25rem; }
+.dated-list p, .post-list p { display: grid; grid-template-columns: 130px 1fr; gap: 18px; margin: .55rem 0; }
+.dated-list time, .post-list time { white-space: nowrap; color: #555; }
+.dated-list b { font-weight: 700; }
+.more-list { margin-top: .65rem; }
+.more-list summary { display: inline-block; color: #555; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.more-list[open] summary { margin-bottom: .55rem; }
+.post-list a { font-weight: 600; }
+.projects-bottom { margin-top: 2.2rem; }
+.publication-row { display: grid; grid-template-columns: 1fr 200px; gap: 30px; align-items: center; min-height: 122px; margin: 1.25rem 0 1.8rem; }
+.publication-row h3 a { text-decoration: none; }
+.paper-thumb { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; width: 200px; height: 96px; padding: 11px; background: #edf2f5; border: 1px solid #aaa; box-shadow: 0 1px 4px rgba(0,0,0,.22); text-decoration: none !important; font-family: Arial, sans-serif; }
+.paper-thumb span, .paper-thumb b { display: grid; place-items: center; border: 1px solid rgba(45,65,80,.28); background: rgba(255,255,255,.75); font-size: .75rem; }
+.paper-thumb b { grid-column: 1 / -1; color: #385b7b; }
+.paper-thumb.purple { background: #eeeaf4; }
+.paper-thumb.green { background: #e7f0ed; }
+.academic-footer { margin-top: 3rem; padding: 1rem 0 2rem; border-top: 1px solid #e4e4e4; color: #666; font-size: .82rem; text-align: center; }
+
+@media (max-width: 680px) {
+  .academic-site .new-main { width: min(100% - 28px, 900px); padding-top: 20px; }
+  .academic-profile { min-height: 125px; padding-right: 118px; }
+  .academic-profile h1 { margin-bottom: 18px; font-size: 2rem; }
+  .academic-profile p:first-of-type { font-size: .9rem; }
+  .academic-profile img { right: 0; width: 105px; height: 105px; }
+  .institution-row { grid-template-columns: 65px 1fr; gap: 13px; }
+  .seal, .company-badge { width: 54px; height: 54px; }
+  .dated-list p, .post-list p { grid-template-columns: 96px 1fr; gap: 10px; }
+  .publication-row { grid-template-columns: 1fr; gap: 10px; }
+  .paper-thumb { width: 100%; height: 76px; grid-template-columns: repeat(3, 1fr); }
+  .paper-thumb b { grid-column: auto; }
+}
