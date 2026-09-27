@@ -278,6 +278,10 @@ dialog h2 { padding-right: 32px; margin-bottom: 15px; font-size: 27px; font-weig
 .more-list summary { display: inline-block; color: #555; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .more-list[open] summary { margin-bottom: .55rem; }
 .post-list a { font-weight: 600; }
+.all-posts-link { margin: 1.05rem 0 0 !important; text-align: right; }
+.all-posts-link a { display: inline-flex; align-items: center; gap: .45rem; padding-bottom: .18rem; border-bottom: 1px solid #536574; font-size: 1.02rem; font-weight: 600; text-decoration: none; }
+.all-posts-link span { transition: transform .2s ease; }
+.all-posts-link a:hover span { transform: translateX(3px); }
 .projects-bottom { margin-top: 2.2rem; }
 .publication-row { display: grid; grid-template-columns: 1fr 200px; gap: 30px; align-items: center; min-height: 122px; margin: 1.25rem 0 1.8rem; }
 .publication-row h3 a { text-decoration: none; }

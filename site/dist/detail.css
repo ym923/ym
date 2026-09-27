@@ -19,4 +19,12 @@
 .metric-strip strong { font-size: 1.25rem; }
 .metric-strip span { color: #666; font-size: .78rem; }
 .detail-footer { margin-top: 55px; padding-top: 18px; border-top: 1px solid #e4e4e4; }
+.archive-header { padding: 54px 0 34px; border-bottom: 1px solid #e4e8eb; }
+.archive-header h1 { margin: 0; font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 600; letter-spacing: -.02em; }
+.archive-header > p:last-child { margin: 18px 0 0; color: #5d6b77; }
+.archive-list article { display: grid; grid-template-columns: 145px 1fr; gap: 28px; padding: 22px 0; border-bottom: 1px solid #e7ebee; }
+.archive-list time { color: #5d6b77; white-space: nowrap; }
+.archive-list a { font-size: 1.05rem; font-weight: 600; line-height: 1.6; text-decoration-thickness: 1px; }
+.archive-list p { margin: 7px 0 0; color: #78848e; font-size: .82rem; }
 @media (max-width: 600px) { .detail-shell { width: 100%; margin: 0; padding: 26px 20px 58px; border: 0; box-shadow: none; } .detail-header { padding-top: 36px; } .metric-strip { grid-template-columns: 1fr; } .metric-strip p { border-right: 0; border-bottom: 1px solid #d8d8d8; } .metric-strip p:last-child { border-bottom: 0; } }
+@media (max-width: 600px) { .archive-header { padding-top: 38px; } .archive-list article { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; } }
