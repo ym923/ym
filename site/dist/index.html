@@ -7,17 +7,51 @@
   <title>杨蔓｜个人主页</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%233c526c'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='36' fill='white'%3E%E6%9D%A8%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
+  <script src="profile-swiper.js" defer></script>
 </head>
 <body class="academic-site">
   <main class="new-main">
     <header class="academic-profile">
-      <div>
+      <div class="profile-intro">
+        <p class="profile-kicker">PORTFOLIO · 2026</p>
         <h1>杨 蔓</h1>
-        <p>研究方向：AI 产品、软件工程、测试开发与工程效率。</p>
-        <p>Email: <a href="mailto:voila666@163.com">voila666@163.com</a></p>
-        <p>Tel: <a href="tel:+8618647205728">186 4720 5728</a></p>
+        <p class="profile-focus">AI 产品、软件工程、测试开发与工程效率</p>
+        <div class="profile-contact" aria-label="联系方式">
+          <p><span>Email</span><a href="mailto:voila666@163.com">voila666@163.com</a></p>
+          <p><span>Tel</span><a href="tel:+8618647205728">186 4720 5728</a></p>
+        </div>
       </div>
-      <img src="avatar.jpeg" width="153" height="212" alt="杨蔓证件照">
+      <div class="profile-swiper" tabindex="0" role="region" aria-roledescription="carousel" aria-label="个人照片轮播">
+        <div class="portrait-stack" aria-live="polite">
+          <figure class="portrait-card is-active" data-slide="0" aria-hidden="false">
+            <img src="images/profile/moment-01.jpg" alt="毕业季花园中的个人照片" width="1919" height="1080">
+          </figure>
+          <figure class="portrait-card is-next" data-slide="1" aria-hidden="true">
+            <img src="images/profile/moment-02.jpg" alt="湖畔的个人照片" width="1080" height="1440" loading="lazy">
+          </figure>
+          <figure class="portrait-card is-after" data-slide="2" aria-hidden="true">
+            <img src="images/profile/moment-03.jpg" alt="秋日树下的个人照片" width="1080" height="1440" loading="lazy">
+          </figure>
+          <figure class="portrait-card" data-slide="3" aria-hidden="true">
+            <img src="images/profile/moment-04.jpg" alt="北京街巷中的个人照片" width="1080" height="1440" loading="lazy">
+          </figure>
+          <figure class="portrait-card" data-slide="4" aria-hidden="true">
+            <img src="images/profile/moment-05.jpg" alt="个人收藏的影视画面" width="1170" height="1168" loading="lazy">
+          </figure>
+        </div>
+        <div class="swiper-controls">
+          <button class="swiper-arrow swiper-prev" type="button" aria-label="上一张照片">←</button>
+          <div class="swiper-dots" aria-label="选择照片">
+            <button class="is-current" type="button" data-index="0" aria-label="第 1 张照片" aria-current="true"></button>
+            <button type="button" data-index="1" aria-label="第 2 张照片"></button>
+            <button type="button" data-index="2" aria-label="第 3 张照片"></button>
+            <button type="button" data-index="3" aria-label="第 4 张照片"></button>
+            <button type="button" data-index="4" aria-label="第 5 张照片"></button>
+          </div>
+          <button class="swiper-arrow swiper-next" type="button" aria-label="下一张照片">→</button>
+        </div>
+        <p class="swiper-count" aria-hidden="true"><span>01</span> / 05</p>
+      </div>
     </header>
 
     <section class="academic-section" aria-labelledby="new-education-title">
