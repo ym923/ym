@@ -1,1 +1,88 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stand By Me｜杨蔓</title><meta name="description" content="Stand By Me 项目介绍"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/detail.css"></head><body class="academic-site detail-page"><main class="detail-shell"><nav class="detail-nav"><a href="/">← 返回主页</a><a href="mailto:voila666@163.com">联系我</a></nav><header class="detail-header"><p class="detail-kicker">Project · 2024.04—2025.10</p><h1>Stand By Me</h1><p class="detail-lead">LLM 驱动的 AR 虚拟宠物陪伴产品，帮助孤独症儿童在陪伴式交互与真实任务中提升社会适应能力。</p><div class="detail-meta"><span>角色：项目负责人</span><span>方向：AI 产品 / AR / 康复科技</span></div><div class="metric-strip"><p><strong>91%</strong><span>手势识别准确率</span></p><p><strong>&lt; 200ms</strong><span>交互反馈</span></p><p><strong>70%</strong><span>平均任务完成度</span></p></div></header><section class="detail-section"><h2>项目背景</h2><p>既有社会交往训练工具普遍缺乏持续互动，也难以根据儿童的实际状态动态调整内容。团队以虚拟宠物作为低压力交互媒介，把训练延伸到真实生活任务。</p></section><section class="detail-section"><h2>核心方案</h2><ul><li>基于 ARKit 获取手部 21 个三维关键点，以 XGBoost 完成低延迟手势识别。</li><li>结合地图 API、结构化提示词与自适应记忆，生成难度渐进的个性化出行和社交任务。</li><li>以 2,000 条专业语料监督微调 Qwen2.5，输出多模态评估和康复建议。</li></ul></section><section class="detail-section"><h2>我负责的工作</h2><p class="placeholder">待补充：产品调研过程、需求取舍、团队协作方式、关键版本迭代和个人复盘。</p></section><section class="detail-section"><h2>结果与反思</h2><p>机构使用统计显示，APP 平均交互次数达到每日 9 次，儿童对话回复率达到 75%。相关论文以第二作者身份发表于 Frontiers in Virtual Reality, 2026。</p></section><footer class="detail-footer"><a href="/posts/stand-by-me-notes/">阅读项目随笔 →</a></footer></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stand By Me｜杨蔓</title>
+  <meta name="description" content="Stand By Me：融合 AR 虚拟宠物、智能对话、社交手势识别、真实场景任务生成与多模态行为评估的 iOS 社交训练辅助产品。">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/detail.css">
+  <link rel="preload" href="/fonts/noto-serif-sc.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body class="detail-page">
+  <main class="detail-shell">
+    <nav class="detail-nav" aria-label="页面导航"><a href="/#new-projects-title">← 返回项目经历</a><a href="mailto:voila666@163.com">联系我</a></nav>
+    <header class="detail-header">
+      <p class="detail-kicker">PROJECT · AR / AI / SOCIAL INTERACTION</p>
+      <h1>Stand By Me</h1>
+      <p class="detail-lead">让虚拟陪伴，走向真实的社交。<br>面向孤独症儿童的 iOS 社交训练辅助产品，以 AR 虚拟宠物连接语音交流、手势互动和真实场景任务，再通过行为记录与阶段性评估持续调整训练内容。</p>
+      <div class="detail-meta"><span>角色 · 项目负责人</span><span>SwiftUI / ARKit / XGBoost / Qwen2.5</span></div>
+      <div class="metric-strip">
+        <p><strong>93.15%</strong><span>双归一化消融实验准确率</span></p>
+        <p><strong>0.926</strong><span>同组实验 F1-Score</span></p>
+        <p><strong>2,000</strong><span>人工核验的微调指令样本</span></p>
+      </div>
+    </header>
+
+    <section class="detail-section">
+      <h2>做了什么</h2>
+      <p>围绕家庭训练中内容重复、互动难以持续、训练表现难以记录的问题，构建一套从互动到评估的完整流程：儿童与虚拟宠物交流、练习有社交含义的手势，随后在家长陪同下完成真实地点的社交任务；系统记录三类行为，生成能力变化与下一阶段训练建议。</p>
+      <p>客户端以 SwiftUI 构建界面，SwiftData 持久化用户画像和训练记录，ARKit 与 RealityKit 承载虚拟宠物交互。手势模型通过 Core ML 在设备端推理，对话、任务生成和行为评估通过大语言模型服务完成。</p>
+      <div class="flow" aria-label="训练闭环：对话训练、手势互动、真实场景任务、行为评估">
+        <div><strong>01 · 对话训练</strong><small>语音输入与个性化回应</small></div>
+        <div><strong>02 · 手势互动</strong><small>动作识别与宠物反馈</small></div>
+        <div><strong>03 · 真实场景任务</strong><small>地点匹配与分步引导</small></div>
+        <div><strong>04 · 行为评估</strong><small>阶段总结与画像更新</small></div>
+      </div>
+    </section>
+
+    <section class="detail-section" id="dialogue">
+      <h2>01 / 自适应对话训练</h2>
+      <p class="techline">Speech · TTS · 结构化 Prompt · 滑动窗口记忆</p>
+      <p>以 AR 宠物作为交流对象，通过语音识别获取儿童的表达，将当前输入、最近 10 轮对话、兴趣偏好和 IEP（个别化教育计划）进度共同组织为提示词。模型生成回应后，TTS 播报与宠物动画同步展示。</p>
+      <p>针对沉默和偏离话题，设计 50 秒输入监测与鼓励引导机制，连续三轮没有有效回应时切换话题。长期记忆采用“每日摘要 → 两周汇总”的方式，更新兴趣画像，同时控制历史上下文长度与调用成本。</p>
+      <figure class="figure compact"><a href="/images/stand-by-me/dialogue.webp" target="_blank" rel="noreferrer" aria-label="打开此界面的高清原图"><img src="/images/stand-by-me/dialogue.webp" alt="AR 虚拟宠物在真实环境中与儿童进行多轮语音对话的两张应用界面" width="721" height="721"></a><figcaption>AR 宠物与多轮对话界面：将语音回应与虚拟形象反馈结合。</figcaption></figure>
+    </section>
+
+    <section class="detail-section" id="gesture">
+      <h2>02 / 社交手势识别与即时反馈</h2>
+      <p class="techline">Vision / ARKit · 关键点归一化 · XGBoost · Core ML</p>
+      <p>从摄像头画面提取 21 个手部关键点，以手腕为原点进行平移归一化，再按骨架基准长度进行尺度归一化，减少手部位置、手型大小和拍摄距离的影响。使用 XGBoost 对点赞、比耶、OK 等手势分类，将模型转换为 Core ML 格式完成端侧推理。</p>
+      <p>分类结果经置信度阈值校验后，才触发对应宠物动作。训练数据纳入非标准动作样本，兼顾识别可靠性与初学者的容错体验；家长可以启停指定手势，并配置手势与宠物行为的映射关系。</p>
+      <div class="figure-pair">
+        <figure class="figure"><a href="/images/stand-by-me/gesture-settings.webp" target="_blank" rel="noreferrer" aria-label="打开此界面的高清原图"><img src="/images/stand-by-me/gesture-settings.webp" alt="手势开关、虚拟宠物反馈动作与映射配置界面" width="712" height="639" loading="lazy"></a><figcaption>手势配置：按训练需要启停动作、调整反馈。</figcaption></figure>
+        <figure class="figure"><a href="/images/stand-by-me/gesture-recognition.webp" target="_blank" rel="noreferrer" aria-label="打开此界面的高清原图"><img src="/images/stand-by-me/gesture-recognition.webp" alt="点赞与 OK 手势识别后触发 AR 宠物反馈的实际应用画面" width="886" height="664" loading="lazy"></a><figcaption>实时识别：识别结果确认后触发宠物动画。</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="detail-section" id="tasks">
+      <h2>03 / 真实场景的个性化社交任务</h2>
+      <p class="techline">高德 POI · Jaccard 去重 · 三层 Prompt · MapKit</p>
+      <p>获取当前位置或手动指定位置，通过高德地图接口检索附近兴趣点，将地点类别、距离和营业状态转换为环境标签。候选任务先经过两项约束：用 Jaccard 相似度对照最近 5 次已完成任务去重，再依据用户能力评分匹配难度。</p>
+      <p>将真实环境、用户画像与 JSON 输出格式组织为三层提示词，一次生成 3–4 组分步方案并缓存至本地任务池。“换一个”直接读取缓存，减少重复请求。选定后通过 MapKit 导航至任务地点，逐步展示社交指令、记录完成情况，并将家长反馈与任务结果回写画像。</p>
+      <figure class="figure compact"><a href="/images/stand-by-me/task-generation.webp" target="_blank" rel="noreferrer" aria-label="打开此界面的高清原图"><img src="/images/stand-by-me/task-generation.webp" alt="应用中的附近社交任务推荐及包含目标、提示和分步社交指令的任务详情" width="646" height="556" loading="lazy"></a><figcaption>任务推荐与详情：把真实地点转化为可执行的分步社交练习。</figcaption></figure>
+    </section>
+
+    <section class="detail-section" id="assessment">
+      <h2>04 / 多模态行为评估与画像更新</h2>
+      <p class="techline">Qwen2.5-3B-Instruct · SFT / LoRA · 异步采集 · SwiftData</p>
+      <p>整合对话文本、手势互动日志与任务执行记录，构建 2,000 条“提示词—输入—响应”指令样本。数据由场景模拟、真实课程记录和模型辅助扩展组成，输出评分与分析经过人工核验修正；以 Qwen2.5-3B-Instruct 为基座进行 LoRA 监督微调（Rank 16、Alpha 32、5 个训练轮次）。</p>
+      <p>三类行为以异步方式记录，每两周聚合并输出表达、非语言情感交互、社会适应三个维度的评分、评价与训练建议，写回用户画像。家长同时可以查看原始记录，对照报告了解训练变化，为后续训练调整提供参考。</p>
+      <figure class="figure"><a href="/images/stand-by-me/assessment.webp" target="_blank" rel="noreferrer" aria-label="打开此界面的高清原图"><img src="/images/stand-by-me/assessment.webp" alt="家长端综合能力画像、三个能力维度的详细分析以及评分标准对照界面" width="1250" height="932" loading="lazy"></a><figcaption>阶段性评估报告：综合能力画像、维度说明与评分标准。</figcaption></figure>
+      <details class="more-list"><summary>查看行为记录界面</summary><figure class="figure compact"><a href="/images/stand-by-me/behavior-records.webp" target="_blank" rel="noreferrer" aria-label="打开此界面的高清原图"><img src="/images/stand-by-me/behavior-records.webp" alt="对话、手势与任务完成情况的历史记录及趋势展示" width="781" height="777" loading="lazy"></a><figcaption>保留交互记录与趋势，便于家长回看具体训练过程。</figcaption></figure></details>
+    </section>
+
+    <section class="detail-section" id="results">
+      <h2>实验与验证</h2>
+      <p>在分类器结构、训练样本划分与参数设置保持一致的条件下，对关键点预处理方法进行消融对比。平移与尺度归一化组合后，准确率由 86.42% 提升至 93.15%，提高 <strong>6.73 个百分点</strong>；F1-Score 由 0.854 提升至 0.926。</p>
+      <div class="table-wrap"><table class="results-table"><caption class="source-note">关键点预处理消融实验</caption><thead><tr><th scope="col">预处理方法</th><th scope="col">Accuracy</th><th scope="col">F1-Score</th></tr></thead><tbody><tr><td>原始骨架数据</td><td>86.42%</td><td>0.854</td></tr><tr><td>尺度归一化</td><td>87.16%</td><td>0.862</td></tr><tr><td>平移归一化</td><td>91.35%</td><td>0.908</td></tr><tr class="best"><td>平移 + 尺度归一化</td><td>93.15%</td><td>0.926</td></tr></tbody></table></div>
+      <p class="source-note">数据口径：同一消融实验（表 5-1）。另一次最终分类器测试记录为 96.5% 总体分类精度，属于独立测试口径。</p>
+      <h3>端到端功能验收</h3>
+      <p>功能测试覆盖对话训练、手势设置与识别、任务生成与执行、行为记录和评估报告。非功能测试包含 200 次手势识别、200 轮对话与 5 个时间段的评估数据，测试记录为通过。</p>
+      <p class="source-note">验收阈值包括手势反馈平均延迟 &lt; 200 ms、对话至语音播报平均耗时 &lt; 4 s，以及 3 步内进入核心训练或查看报告。测试表记录阈值与通过结论，未提供逐项实测均值。</p>
+    </section>
+
+    <footer class="detail-footer"><a href="/#new-projects-title">← 返回项目经历</a> · <a href="https://doi.org/10.3389/frvir.2026.1871608" target="_blank" rel="noreferrer">相关论文 DOI ↗</a></footer>
+  </main>
+</body>
+</html>

@@ -7,9 +7,7 @@
   const count = swiper.querySelector('.swiper-count span');
   const previousButton = swiper.querySelector('.swiper-prev');
   const nextButton = swiper.querySelector('.swiper-next');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let activeIndex = 0;
-  let autoplayTimer;
   let pointerStart = null;
 
   const relativeIndex = (index) => (index - activeIndex + slides.length) % slides.length;
@@ -37,30 +35,22 @@
     count.textContent = String(activeIndex + 1).padStart(2, '0');
   }
 
-  function restartAutoplay() {
-    window.clearInterval(autoplayTimer);
-    if (!reduceMotion) autoplayTimer = window.setInterval(() => render(activeIndex + 1, 1), 5200);
-  }
-
   previousButton.addEventListener('click', () => {
     render(activeIndex - 1, -1);
-    restartAutoplay();
   });
 
   nextButton.addEventListener('click', () => {
     render(activeIndex + 1, 1);
-    restartAutoplay();
   });
 
   dots.forEach((dot) => dot.addEventListener('click', () => {
     const target = Number(dot.dataset.index);
     render(target, target >= activeIndex ? 1 : -1);
-    restartAutoplay();
   }));
 
   swiper.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') previousButton.click();
-    if (event.key === 'ArrowRight') nextButton.click();
+    if (event.key === 'ArrowLeft') { event.preventDefault(); previousButton.click(); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); nextButton.click(); }
   });
 
   swiper.addEventListener('pointerdown', (event) => {
@@ -77,11 +67,6 @@
   });
 
   swiper.addEventListener('pointercancel', () => { pointerStart = null; });
-  swiper.addEventListener('mouseenter', () => window.clearInterval(autoplayTimer));
-  swiper.addEventListener('mouseleave', restartAutoplay);
-  swiper.addEventListener('focusin', () => window.clearInterval(autoplayTimer));
-  swiper.addEventListener('focusout', restartAutoplay);
 
   render(0);
-  restartAutoplay();
 })();

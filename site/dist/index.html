@@ -7,14 +7,16 @@
   <title>杨蔓｜个人主页</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%233c526c'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='36' fill='white'%3E%E6%9D%A8%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" href="fonts/noto-serif-sc.woff2" as="font" type="font/woff2" crossorigin>
   <script src="profile-swiper.js" defer></script>
 </head>
 <body class="academic-site">
   <main class="new-main">
+    <nav class="site-nav" aria-label="主页导航"><span class="nav-name">YANG MAN</span><div class="nav-links"><a href="#new-education-title">教育</a><a href="#new-experience-title">实习</a><a href="#new-projects-title">项目</a><a href="mailto:voila666@163.com">联系</a></div></nav>
     <header class="academic-profile">
       <div class="profile-intro">
-        <p class="profile-kicker">PORTFOLIO · 2026</p>
-        <h1>杨 蔓</h1>
+        <p class="profile-kicker">SOFTWARE ENGINEERING</p>
+        <h1>杨蔓</h1>
         <p class="profile-focus">AI 产品、软件工程、测试开发与工程效率</p>
         <div class="profile-contact" aria-label="联系方式">
           <p><span>Email</span><a href="mailto:voila666@163.com">voila666@163.com</a></p>
@@ -72,11 +74,11 @@
       <h2 id="new-experience-title">实习经历</h2>
       <article class="institution-row">
         <div class="company-badge">字节<br>跳动</div>
-        <div><h3>字节跳动抖音</h3><p>2026 年 01 月 - 2026 年 05 月，搜索引擎架构测试开发实习生</p><p>CI 自动 Oncall、容灾自动演练与压测平台迁移</p><p class="bracket-links"><a href="internships/bytedance/">[详细介绍]</a> <a href="posts/agent-ci-oncall/">[相关随笔]</a></p></div>
+        <div><h3>字节跳动抖音</h3><p>2026 年 01 月 - 2026 年 05 月，搜索引擎架构测试开发实习生</p><p>CI 自动 Oncall、容灾自动演练与压测平台迁移</p><p class="bracket-links"><a href="internships/bytedance/">详细介绍 →</a> <a href="posts/agent-ci-oncall/">实习复盘</a></p></div>
       </article>
       <article class="institution-row">
         <div class="company-badge">地平<br>线</div>
-        <div><h3>地平线机器人</h3><p>2025 年 10 月 - 2026 年 01 月，AI 数据平台产品实习生</p><p>自动驾驶数据标注平台、流程自动化与 RBAC 权限治理</p><p class="bracket-links"><a href="internships/horizon/">[详细介绍]</a> <a href="posts/platform-governance/">[相关随笔]</a></p></div>
+        <div><h3>地平线机器人</h3><p>2025 年 10 月 - 2026 年 01 月，AI 数据平台产品实习生</p><p>自动驾驶数据标注平台、流程自动化与 RBAC 权限治理</p><p class="bracket-links"><a href="internships/horizon/">详细介绍 →</a> <a href="posts/platform-governance/">实习复盘</a></p></div>
       </article>
     </section>
 
@@ -85,15 +87,15 @@
     <section class="academic-section projects-bottom" aria-labelledby="new-projects-title">
       <h2 id="new-projects-title">项目经历</h2>
       <article class="publication-row">
-        <div><h3><a href="projects/stand-by-me/">Stand By Me：LLM 驱动的 AR 虚拟宠物陪伴产品</a></h3><p><u>项目负责人</u>，手势识别、真实社会任务生成与多模态康复评估</p><p>手势识别准确率 91%，平均任务完成度 70%</p><p class="bracket-links"><a href="projects/stand-by-me/">[项目主页]</a> <a href="posts/stand-by-me-notes/">[项目随笔]</a> <a href="https://doi.org/10.3389/frvir.2026.1871608" target="_blank" rel="noreferrer">[论文 DOI]</a></p></div>
-        <a class="paper-thumb" href="projects/stand-by-me/" aria-label="查看 Stand By Me 项目"><span>AR</span><span>LLM</span><b>91%</b></a>
+        <div><h3><a href="projects/stand-by-me/">Stand By Me：AR 虚拟宠物与智能社交训练</a></h3><p><u>项目负责人</u>，手势识别、真实社会任务生成与多模态康复评估</p><p>关键点消融实验准确率 93.15% · 2,000 条评估微调样本</p><p class="bracket-links"><a href="projects/stand-by-me/">项目介绍 →</a><a href="https://doi.org/10.3389/frvir.2026.1871608" target="_blank" rel="noreferrer">论文 DOI ↗</a></p></div>
+        <a class="paper-thumb project-image" href="projects/stand-by-me/" aria-label="查看 Stand By Me 项目"><img src="images/stand-by-me/dialogue.webp" alt="Stand By Me 的 AR 宠物对话界面" width="722" height="722" loading="lazy"></a>
       </article>
       <article class="publication-row">
-        <div><h3><a href="projects/edumate/">Edumate：基于 EMT 框架的双 AI 协作学习系统</a></h3><p><u>核心成员</u>，双 AI 协同、LightRAG 检索与数字人交互</p><p>学习时长提升 15%，全国大学生软件创新大赛二等奖</p><p class="bracket-links"><a href="projects/edumate/">[项目主页]</a> <a href="projects/edumate/#notes">[项目随笔]</a></p></div>
+        <div><h3><a href="projects/edumate/">Edumate：基于 EMT 框架的双 AI 协作学习系统</a></h3><p><u>核心成员</u>，双 AI 协同、LightRAG 检索与数字人交互</p><p>学习时长提升 15%，全国大学生软件创新大赛二等奖</p><p class="bracket-links"><a href="projects/edumate/">项目介绍 →</a></p></div>
         <a class="paper-thumb purple" href="projects/edumate/" aria-label="查看 Edumate 项目"><span>AI × 2</span><span>RAG</span><b>+15%</b></a>
       </article>
       <article class="publication-row">
-        <div><h3><a href="projects/sdn-flow-matching/">Improved Data Flow Matching in SDN Using Machine Learning</a></h3><p>机器学习驱动的数据流子序列匹配算法</p><p>CSAIDE 2025，EI Compendex、Scopus 双检索</p><p class="bracket-links"><a href="projects/sdn-flow-matching/">[项目主页]</a> <a href="https://doi.org/10.1145/3729706.3729724" target="_blank" rel="noreferrer">[论文 DOI]</a></p></div>
+        <div><h3><a href="projects/sdn-flow-matching/">Improved Data Flow Matching in SDN Using Machine Learning</a></h3><p>机器学习驱动的数据流子序列匹配算法</p><p>CSAIDE 2025，EI Compendex、Scopus 双检索</p><p class="bracket-links"><a href="projects/sdn-flow-matching/">项目介绍 →</a> <a href="https://doi.org/10.1145/3729706.3729724" target="_blank" rel="noreferrer">论文 DOI ↗</a></p></div>
         <a class="paper-thumb green" href="projects/sdn-flow-matching/" aria-label="查看 SDN 项目"><span>SDN</span><span>ML</span><b>2025</b></a>
       </article>
     </section>
@@ -108,7 +110,7 @@
         <p><time>2024 - 2025 年</time><span>二等学习奖学金（前 5%）、社会工作奖学金</span></p>
       </div>
       <details class="more-list">
-        <summary>点击展开</summary>
+        <summary>更多获奖与荣誉</summary>
         <div class="dated-list">
           <p><time>国家级</time><span>大学生创新创业训练计划认定 <b>| 两项</b></span></p>
           <p><time>国家级</time><span>中国高校计算机大赛移动应用创新赛 <b>| 三等奖</b></span></p>
@@ -125,7 +127,6 @@
       <div class="post-list">
         <p><time>2026 年 05 月</time><a href="posts/agent-ci-oncall/">从一次误报告警出发：Agent 如何参与 CI Oncall</a></p>
         <p><time>2026 年 01 月</time><a href="posts/platform-governance/">从标注效率到平台治理：数据平台产品实习复盘</a></p>
-        <p><time>待更新</time><a href="posts/stand-by-me-notes/">做一款真正被使用的康复产品：Stand By Me 项目札记</a></p>
       </div>
       <p class="all-posts-link"><a href="posts/">所有文章 <span aria-hidden="true">→</span></a></p>
     </section>
@@ -133,109 +134,5 @@
     <footer class="academic-footer"><p>© 2026 杨蔓 · <a href="mailto:voila666@163.com">联系我</a></p></footer>
   </main>
 
-  <main class="legacy-main" hidden>
-    <header class="profile">
-      <div class="profile-copy">
-        <h1>杨 蔓</h1>
-        <p>研究方向：AI 产品、软件工程、测试开发与工程效率。</p>
-        <p>教育背景：北京航空航天大学软件工程硕士研究生。</p>
-        <p>Email: <a href="mailto:voila666@163.com">voila666@163.com</a></p>
-        <p>Tel: <a href="tel:+8618647205728">186 4720 5728</a></p>
-      </div>
-      <img class="avatar" src="avatar.jpeg" width="153" height="212" alt="杨蔓证件照">
-    </header>
-
-    <section aria-labelledby="education-title">
-      <h2 id="education-title">教育经历</h2>
-      <article class="education-item">
-        <div class="school-mark">BUAA</div>
-        <div><p class="date">2026 年 09 月 - 至今</p><p><strong>软件工程硕士</strong>，北京航空航天大学，北京，中国</p></div>
-      </article>
-      <article class="education-item">
-        <div class="school-mark">BJTU</div>
-        <div><p class="date">2022 年 09 月 - 2026 年 06 月</p><p><strong>软件工程学士</strong>，北京交通大学，北京，中国</p><p class="subline">综合排名 12 / 189（前 6%） · CET-4 552 · CET-6 542</p></div>
-      </article>
-    </section>
-
-    <hr>
-
-    <section aria-labelledby="projects-title">
-      <h2 id="projects-title">项目经历</h2>
-      <article class="project-item">
-        <div class="project-copy">
-          <h3>Stand By Me：LLM 驱动的 AR 虚拟宠物陪伴产品</h3>
-          <p><u>项目负责人</u>，手势识别、真实社会任务生成与多模态康复评估</p>
-          <p>2024 年 04 月 - 2025 年 10 月</p>
-          <p class="links"><button type="button" data-detail="standbyme">[详细内容]</button> <a href="https://doi.org/10.3389/frvir.2026.1871608" target="_blank" rel="noreferrer">[论文 DOI]</a></p>
-        </div>
-        <div class="project-thumb thumb-standby" aria-hidden="true"><span>AR</span><span>LLM</span><b>91%</b></div>
-      </article>
-      <article class="project-item">
-        <div class="project-copy">
-          <h3>Edumate：基于 EMT 框架的双 AI 协作数字人学习系统</h3>
-          <p><u>核心成员</u>，双 AI 协同、LightRAG 检索与数字人交互</p>
-          <p>2024 年 11 月 - 2025 年 05 月</p>
-          <p class="links"><button type="button" data-detail="edumate">[详细内容]</button></p>
-        </div>
-        <div class="project-thumb thumb-edumate" aria-hidden="true"><span>AI × 2</span><span>RAG</span><b>+15%</b></div>
-      </article>
-      <article class="project-item">
-        <div class="project-copy">
-          <h3>Improved Data Flow Matching in SDN Using Machine Learning</h3>
-          <p>机器学习驱动的数据流子序列匹配算法</p>
-          <p>CSAIDE 2025，EI Compendex、Scopus 双检索</p>
-          <p class="links"><button type="button" data-detail="sdn">[详细内容]</button> <a href="https://doi.org/10.1145/3729706.3729724" target="_blank" rel="noreferrer">[论文 DOI]</a></p>
-        </div>
-        <div class="project-thumb thumb-sdn" aria-hidden="true"><span>SDN</span><span>ML</span><b>2025</b></div>
-      </article>
-    </section>
-
-    <section aria-labelledby="experience-title">
-      <h2 id="experience-title">实习经历</h2>
-      <article class="experience-item">
-        <div class="org-mark">字节<br>跳动</div>
-        <div>
-          <h3>字节跳动抖音</h3>
-          <p>2026 年 01 月 - 2026 年 05 月，搜索引擎架构测试开发实习生</p>
-          <p>CI 自动 Oncall、容灾自动演练、新旧压测平台迁移</p>
-          <p class="links"><button type="button" data-detail="bytedance">[详细内容]</button></p>
-        </div>
-      </article>
-      <article class="experience-item">
-        <div class="org-mark">地平<br>线</div>
-        <div>
-          <h3>地平线机器人</h3>
-          <p>2025 年 10 月 - 2026 年 01 月，AI 数据平台产品实习生</p>
-          <p>自动驾驶数据标注平台、DSL 流程自动化与 RBAC 权限治理</p>
-          <p class="links"><button type="button" data-detail="horizon">[详细内容]</button></p>
-        </div>
-      </article>
-    </section>
-
-    <hr>
-
-    <section aria-labelledby="honors-title">
-      <h2 id="honors-title">获奖与荣誉</h2>
-      <dl class="honor-list">
-        <div><dt>2025 年</dt><dd>第十八届全国大学生软件创新大赛 <span>| 全国二等奖</span></dd></div>
-        <div><dt>2025 年</dt><dd>全国首届化工 AI 大赛 <span>| 创新提名奖</span></dd></div>
-        <div><dt>2024 - 2025 年</dt><dd>二等学习奖学金（前 5%）、社会工作奖学金</dd></div>
-        <div><dt>国家级</dt><dd>大学生创新创业训练计划认定 <span>| 两项</span></dd></div>
-        <div><dt>国家级</dt><dd>中国高校计算机大赛移动应用创新赛 <span>| 三等奖</span></dd></div>
-        <div><dt>北部赛区</dt><dd>中国大学生服务外包创新创业大赛 <span>| 三等奖</span></dd></div>
-      </dl>
-    </section>
-
-    <footer><p>本网站内容根据个人简历整理。联系方式：<a href="mailto:voila666@163.com">voila666@163.com</a></p></footer>
-  </main>
-
-  <dialog id="detail-dialog" aria-labelledby="dialog-title">
-    <button class="dialog-close" type="button" aria-label="关闭详情">×</button>
-    <div class="dialog-kicker" id="dialog-kicker"></div>
-    <h2 id="dialog-title"></h2>
-    <p class="dialog-summary" id="dialog-summary"></p>
-    <div class="dialog-metrics" id="dialog-metrics"></div>
-    <div class="dialog-body" id="dialog-body"></div>
-  </dialog>
 </body>
 </html>
